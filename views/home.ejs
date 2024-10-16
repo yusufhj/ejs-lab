@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= rest.name  %></title>
+</head>
+<body>
+  <!-- <h1>Home Page</h1> -->
+
+<h1>
+  <%= rest.name  %>
+</h1>
+
+<h2>Address: 
+  <%= rest.address  %>
+</h2>
+
+<h2>Phone: 
+  <%= rest.phone  %>
+</h2>
+
+<h2>Status: 
+<% if(rest.isOpen) { %>
+  Yes we are open!</h2>
+<% } else { %>
+  Sorry, we are closed.</h2>
+<% } %>
+
+
+</body>
+</html>
