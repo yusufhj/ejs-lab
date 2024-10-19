@@ -60,4 +60,15 @@ app.get('/', (req, res) => {
     res.render('home.ejs', { rest: RESTAURANT} );
 });
 
+app.get('/menu', (req, res) => {
+//   res.send('Hello There!');
+    res.render('menu.ejs', { menu: RESTAURANT.menu} );
+});
+
+app.get('/menu/:category', (req, res) => {
+    const category = req.params.category;
+    const menuItems = RESTAURANT.menu.filter(item => item.category === req.params.category);
+    res.render('category.ejs', { menu: menuItems, category: category} );
+});
+
 app.listen(3000);
